@@ -1,0 +1,16 @@
+.app-layout {
+  height: 100vh;
+}
+
+inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 100%;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+}

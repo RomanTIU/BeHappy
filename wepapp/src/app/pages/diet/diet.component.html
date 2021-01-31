@@ -1,0 +1,40 @@
+<nz-space-item>
+  <button nz-button nzGhost (click)="add()" nzType="primary"
+          class="float-right">
+    {{'REGIME.ADD_EDIT.BUTTON' | translate }}
+  </button>
+</nz-space-item>
+<nz-table [nzData]="diets" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" [nzTotal]="total"
+          nzHideOnSinglePage (nzPageIndexChange)="getData(true)" [nzFrontPagination]="false">
+  <thead (nzSortOrderChange)="sort($event)">
+  <tr>
+    <th nzAlign="center" [nzSortFn]="true" nzColumnKey="id">ID
+    </th>
+    <th nzAlign="center" [nzSortFn]="true" nzColumnKey="name">
+      {{'DIET.TITLE' | translate}}</th>
+    <th nzAlign="center" [nzSortFn]="true" nzColumnKey="recipe">
+      {{'DIET.ADD_EDIT.RECIPE.NAME'| translate}}
+    </th>
+    <th nzAlign="center">
+      {{ 'GENERAL.ACTIONS' | translate }}
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let diet of diets; let index = index">
+    <td nzAlign="center">{{diet.id}}</td>
+    <td nzAlign="center">{{diet.name}}</td>
+    <td nzAlign="center">{{diet.recipe}}</td>
+    <td nzAlign="center">
+      <button class="mr-20" nz-button nzType="default" (click)="copyOrEdit(generalUri, 'EDIT')">
+        <i nz-icon nzType="edit"></i>
+      </button>
+      <button class="inner" nz-button nzType="default" nzDanger (click)="showDeleteLanguageConfirm(diet)">
+        <i nz-icon nzType="delete"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+
+

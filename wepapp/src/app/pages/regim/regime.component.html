@@ -1,0 +1,31 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <nz-space-item>
+      <button nz-button nzGhost (click)="add()" nzType="primary"
+              class="float-right">
+        {{'REGIME.ADD_EDIT.BUTTON' | translate }}
+      </button>
+    </nz-space-item>
+      <nz-table [nzData]="regimes" [(nzPageIndex)]="pageIndex"  [(nzPageSize)]="pageSize"
+                nzHideOnSinglePage (nzPageIndexChange)="getRegime()" [nzFrontPagination]="false">
+        <thead (nzSortOrderChange)="sort($event)">
+        <tr>
+          <th nzAlign="center" [nzSortFn]="true" nzColumnKey="id">ID
+          </th>
+          <th nzAlign="center" [nzSortFn]="true" nzColumnKey="name">
+            {{'REGIME.TITLE' | translate}}</th>
+          <th nzAlign="center" [nzSortFn]="true" nzColumnKey="diet">
+            {{'REGIME.DIET.TITLE'| translate}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let regime of regimes; let index = index">
+            <td nzAlign="center">{{regime.id}}</td>
+            <td nzAlign="center">{{regime.name}}</td>
+            <td nzAlign="center">{{regime.diet[index].name}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+  </div>
+</div>

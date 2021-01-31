@@ -1,0 +1,31 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/diet">
+          <i nz-icon nzType="fire" nzTheme="twotone"></i>
+          <span>{{'DIET.TITLE' | translate }}</span>
+        </a>
+
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/regime">
+          <i nz-icon nzType="calendar" nzTheme="twotone"></i>
+          <span>{{'REGIME.TITLE' | translate }}</span>
+        </a>
+
+
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-content>
+      <nz-spin class="inner-content" [nzSpinning]="isLoading" [nzDelay]="400" [nzSize]="'large'">
+        <router-outlet></router-outlet>
+      </nz-spin>
+    </nz-content>
+  </nz-layout>
+
+</nz-layout>

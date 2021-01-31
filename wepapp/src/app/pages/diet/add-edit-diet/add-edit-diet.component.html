@@ -1,0 +1,184 @@
+<form nz-form [formGroup]="addEditDiet" [nzLayout]="'horizontal'">
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.TITLE' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.ADD_EDIT.VALIDATION.REQUIRED') | async"
+                     [nzErrorTip]="nameError">
+      <input
+        type="text"
+        maxlength="25"
+        nz-input
+        formControlName="name"
+        [placeholder]="translate.get('DIET.ADD_EDIT.PLACEHOLDER') | async"/>
+
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.ADD_EDIT.VALIDATION.REQUIRED' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.ADD_EDIT.RECIPE.NAME' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.ADD_EDIT.VALIDATION.REQUIRED') | async"
+                     [nzErrorTip]="nameError">
+      <input
+        type="text"
+        maxlength="2001"
+        nz-input
+        formControlName="recipe"
+        [placeholder]="translate.get('DIET.ADD_EDIT.RECIPE.PLACEHOLDER') | async"/>
+
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.ADD_EDIT.VALIDATION.NAME' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.ADD_EDIT.QUANTITY_NAME.NAME' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.VALIDATING') | async"
+                     [nzErrorTip]="nameError">
+      <input
+        type="text"
+        maxlength="25"
+        nz-input
+        formControlName="quantityName"
+        [placeholder]="translate.get('DIET.ADD_EDIT.QUANTITY_NAME.PLACEHOLDER') | async"/>
+
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.VALIDATION.NAME' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.ADD_EDIT.QUANTITY_VALUE.NAME' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.VALIDATING') | async"
+                     [nzErrorTip]="nameError">
+      <input
+        type="text"
+        maxlength="25"
+        nz-input
+        formControlName="quantityValue"
+        [placeholder]="translate.get('DIET.ADD_EDIT.QUANTITY_VALUE.PLACEHOLDER') | async"/>
+
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.VALIDATION.NAME' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.ADD_EDIT.TOTAL.GRAMS.NAME' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.VALIDATING') | async"
+                     [nzErrorTip]="nameError">
+      <input
+        type="text"
+        maxlength="25"
+        nz-input
+        formControlName="totalGrams"
+        [placeholder]="translate.get('DIET.ADD_EDIT.TOTAL.GRAMS.PLACEHOLDER') | async"/>
+
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.VALIDATION.NAME' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.ADD_EDIT.TOTAL.KCAL.NAME' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.VALIDATING') | async"
+                     [nzErrorTip]="nameError">
+      <input
+        type="text"
+        maxlength="25"
+        nz-input
+        formControlName="totalKcal"
+        [placeholder]="translate.get('DIET.ADD_EDIT.TOTAL.KCAL.PLACEHOLDER') | async"/>
+
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.VALIDATION.NAME' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzNoColon [nzSpan]="4">
+      {{'DIET.ADD_EDIT.TOTAL.MACRONUTRIENTS.NAME' | translate}}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="20" nzHasFeedback
+                     [nzValidatingTip]="translate.get('DIET.VALIDATING') | async"
+                     [nzErrorTip]="nameError">
+      <nz-select
+        class="form-select"
+        formControlName="totalMacronutrients"
+        [nzPlaceHolder]="translate.get('DIET.ADD_EDIT.TOTAL.MACRONUTRIENTS.PLACEHOLDER') | async">
+
+        <nz-option
+        *ngFor="let macro of macronutrients"
+        [nzLabel]="macro.label"
+        [nzValue]="macro.value">
+
+        </nz-option>
+      </nz-select>
+      <ng-template #nameError let-control>
+        <ng-container *ngIf="control.hasError('required')">
+          {{'DIET.VALIDATION.NAME' | translate}}
+        </ng-container>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+  <div *nzModalFooter>
+    <button
+    nz-button
+    type="button"
+    nzType="default"
+    (click)="cancel()">
+      {{'GENERAL.BUTTON.CANCEL' | translate}}
+    </button>
+    <button
+      class="float-right"
+      nz-button
+      type="button"
+      nzType="primary"
+      (click)="submitForm()">
+      {{'GENERAL.BUTTON.SAVE' | translate}}
+    </button>
+  </div>
+</form>
