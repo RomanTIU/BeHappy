@@ -12,7 +12,7 @@ public class DietTotal extends EntitySuperClassIdOnly {
 
     public Macronutrients macronutrients;
 
-    enum Macronutrients {
+    public enum Macronutrients {
         PROTEINS, FIBRE, FATS, CARBOHYDRATE
     }
 }
